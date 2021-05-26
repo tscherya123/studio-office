@@ -1,0 +1,10 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+@import url(//db.onlinewebfonts.com/c/9e670af7b1c15f5f10f27f510364d78a?family=RobustikRegular);
+@font-face {font-family: "RobustikRegular"; src: url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.eot"); src: url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.woff") format("woff"), url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9e670af7b1c15f5f10f27f510364d78a.svg#RobustikRegular") format("svg"); }
+
+body{
+	margin: 0;
+	padding: 0;
+}
