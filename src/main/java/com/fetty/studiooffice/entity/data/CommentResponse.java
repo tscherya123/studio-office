@@ -1,4 +1,4 @@
-package com.fetty.studiooffice.entity.ticket;
+package com.fetty.studiooffice.entity.data;
 
 import com.fetty.studiooffice.entity.auth.User;
 import com.fetty.studiooffice.entity.file.File;
@@ -11,22 +11,13 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
-@Table(name = "ticket_history")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TicketHistory {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CommentResponse {
     private Long id;
-
-    private Date modified;
-
-    private String prevStatus;
-    private String newStatus;
-
-    @ManyToOne
-    @JoinColumn(name = "id_user")
-    private User user;
+    private FindUserResponse user;
+    private String comment;
+    private Set<File> files = new HashSet<>();
+    private Date created;
 }

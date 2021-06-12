@@ -30,8 +30,10 @@ public class Ticket {
     @JoinColumn(name = "id_engineer")
     private User engineer;
 
-    @ManyToOne
-    @JoinColumn(name = "id_service")
+//    @ManyToOne
+//    @JoinColumn(name = "id_service")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_service", referencedColumnName = "id")
     private Service service;
 
     @ManyToOne
@@ -53,6 +55,15 @@ public class Ticket {
     @Column
     private Date lastModified;
 
+    @Column
+    private String name;
+
+    @Column
+    private String description;
+
     @ElementCollection(targetClass = File.class)
     private Set<File> files = new HashSet<>();
+
+    @ElementCollection(targetClass = Comment.class)
+    private Set<Comment> comments = new HashSet<>();
 }

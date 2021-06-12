@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_service_type")
@@ -25,4 +25,7 @@ public class Service {
 
     @Column(name = "approximate_price_grn")
     private Integer approximateGrnPrice;
+
+    @Column
+    private Integer count;
 }

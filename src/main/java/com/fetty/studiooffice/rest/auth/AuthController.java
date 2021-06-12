@@ -56,7 +56,7 @@ public class AuthController {
 
         UserDetailsInfo userDetails = (UserDetailsInfo) authentication.getPrincipal();
         if (userDetails.isBanned()) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Аккаунт был заблокирован"));
+            return ResponseEntity.badRequest().body(new MessageResponse("Аккаунт не подтвержден администратором или заблокирован"));
         }
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
@@ -149,7 +149,7 @@ public class AuthController {
                 PhoneUtil.toInternationalPhoneNumberFormatWithPlus(signUpRequest.getPhone()),
                 encoder.encode(signUpRequest.getPassword()),
                 new Date());
-
+        user.setBanned(true);
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
 
